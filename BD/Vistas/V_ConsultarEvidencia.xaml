@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BD.Vistas.V_ConsultarEvidencia"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#333">
+
+    <StackLayout Padding="0,60,0,0"
+                 VerticalOptions="FillAndExpand"
+                 Spacing="10">
+
+        <Frame Margin="15,0"
+               Padding="5"
+               BackgroundColor="#262626"
+               CornerRadius="15"
+               HasShadow="True"
+               BorderColor="#26D1FF">
+
+            <SearchBar x:Name="txtEvidencia"
+                       BackgroundColor="#1E1E1E"
+                       CancelButtonColor="#26D1FF"
+                       Placeholder="Buscar Evidencias Guardadas"
+                       PlaceholderColor="#26D1FF"
+                       TextColor="#26D1FF"
+                       TextChanged="txtEvidencia_TextChanged"
+                       FontSize="16"
+                       HeightRequest="50"
+                       HorizontalOptions="FillAndExpand"/>
+        </Frame>
+
+        <ScrollView VerticalOptions="FillAndExpand">
+            
+            <StackLayout Padding="10,25,10,0">
+                
+                <ListView x:Name="MyListView"
+                          ItemsSource="{Binding Items}"
+                          HasUnevenRows="True"
+                          BackgroundColor="Transparent"
+                          SeparatorVisibility="None"
+                          ItemTapped="Handle_ItemTapped"
+                          SeparatorColor="#26D1FF">
+                    
+                    <ListView.ItemTemplate>
+                        
+                        <DataTemplate>
+                            
+                            <ViewCell>
+                                
+                                <Frame Margin="0,5"
+                                       Padding="10"
+                                       BackgroundColor="#262626"
+                                       CornerRadius="10"
+                                       HasShadow="True"
+                                       BorderColor="#26D1FF">
+                                    
+                                    <StackLayout Spacing="5">
+                                        
+                                        <Label Text="{Binding Titulo}"
+                                               FontSize="20"
+                                               FontAttributes="Bold"
+                                               TextColor="#26D1FF"
+                                               LineBreakMode="TailTruncation" />
+                                        
+                                        <Label Text="{Binding Materia}"
+                                               FontSize="16"
+                                               TextColor="White"
+                                               LineBreakMode="WordWrap"/>
+
+                                        <Label Text="{Binding Id_Tarea}"
+                                               FontSize="14"
+                                               TextColor="White"
+                                               FontAttributes="Italic"/>
+
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+
+        <!-- Botón de Regresar -->
+        <Button Text="Regresar"
+                Margin="20,10"
+                BackgroundColor="#26D1FF"
+                TextColor="Black"
+                FontSize="20"
+                CornerRadius="10"
+                FontAttributes="Bold"
+                HeightRequest="45"
+                x:Name="btnMenu"
+                Clicked="btnMenu_Clicked" />
+
+    </StackLayout>
+
+</ContentPage>

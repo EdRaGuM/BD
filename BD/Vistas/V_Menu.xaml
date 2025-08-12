@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BD.Vistas.V_Menu"
+             BackgroundColor="#333"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+        <StackLayout Padding="20"
+                     VerticalOptions="CenterAndExpand"
+                     Spacing="25">
+
+            <Frame CornerRadius="20"
+                   Padding="25"
+                   BackgroundColor="#404040"
+                   HasShadow="True">
+
+                <StackLayout Spacing="20"
+                             HorizontalOptions="Center">
+
+                    <Label Text="Menú Prinicpal"
+                           FontSize="30"
+                           TextColor="#26D1FF"
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Center" />
+
+                    <BoxView HeightRequest="1"
+                             Color="#26D1FF"
+                             WidthRequest="400"
+                             HorizontalOptions="Center" />
+
+                    <Button Text="Menu de Evidencias"
+                            x:Name="btnEvidencias"
+                            Clicked="btnEvidencias_Clicked"
+                            BackgroundColor="#26D1FF"
+                            TextColor="Black"
+                            CornerRadius="15"
+                            FontSize="20"
+                            HeightRequest="55"
+                            WidthRequest="260"/>
+
+                    <Button Text="Consultar Evidencias"
+                            x:Name="btnConsultar"
+                            Clicked="btnConsultar_Clicked"
+                            BackgroundColor="#1CA6D8"
+                            TextColor="White"
+                            CornerRadius="15"
+                            FontSize="20"
+                            HeightRequest="55"
+                            WidthRequest="260"/>
+
+                    <Button Text="Salir"
+                            x:Name="btnSalir"
+                            Clicked="btnSalir_Clicked"
+                            BackgroundColor="#FF4C4C"
+                            TextColor="White"
+                            CornerRadius="15"
+                            FontSize="20"
+                            HeightRequest="55"
+                            WidthRequest="260"/>
+
+                </StackLayout>
+            </Frame>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"  
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
+             x:Class="BD.Vistas.V_Inicio"  
+             BackgroundColor="#121212"  
+             NavigationPage.HasNavigationBar="False">  
+
+    <StackLayout Padding="0">  
+
+        <Grid>  
+
+            <StackLayout Padding="0" Margin="0">  
+                
+                <Frame HeightRequest="150"   
+                       HorizontalOptions="FillAndExpand"  
+                       Padding="0"  
+                       BackgroundColor="#121212">  
+                    
+                    <Image Source="Banner" Aspect="Fill" Margin="0"/>  
+                </Frame>  
+            </StackLayout>  
+
+            <StackLayout Margin="15, 110, 15, 0">  
+
+                <Frame BackgroundColor="#1E1E1E"   
+                       HasShadow="True"  
+                       HeightRequest="650"  
+                       BorderColor="#26D1FF"  
+                       HorizontalOptions="FillAndExpand"  
+                       VerticalOptions="CenterAndExpand">   
+
+                    <StackLayout>  
+
+                        <StackLayout HorizontalOptions="CenterAndExpand">  
+
+                            <Label Text="BIENVENIDO !!"   
+                                   FontSize="40"  
+                                   FontAttributes="Bold"  
+                                   TextColor="#26D1FF"/>  
+
+                        </StackLayout>  
+
+                        <StackLayout Margin="0, 25, 0, 0">  
+
+                            <Frame BackgroundColor="#333"  
+                                   BorderColor="#26D1FF"   
+                                   Padding="0"   
+                                   Margin="0"   
+                                   CornerRadius="50"  
+                                   HorizontalOptions="FillAndExpand">  
+
+                                <StackLayout Orientation="Horizontal">  
+                                    <Frame CornerRadius="50"   
+                                           HeightRequest="35"  
+                                           WidthRequest="35"   
+                                           Padding="0"   
+                                           HorizontalOptions="Start"   
+                                           Margin="7"  
+                                           BackgroundColor="#333">  
+                                        <Image Source="Correo"/>  
+                                    </Frame>  
+
+                                    <Entry Placeholder="Email"  
+                                           TextColor="#EDEDED"   
+                                           PlaceholderColor="#888"  
+                                           HorizontalOptions="FillAndExpand"  
+                                           x:Name="txtCorreo"  
+                                           Margin="0, 0, 15, 0"/>  
+                                </StackLayout>  
+
+                            </Frame>  
+
+                            <Frame BackgroundColor="#333"  
+                                   BorderColor="#26D1FF"   
+                                   Padding="0" Margin="0,15,0,0" CornerRadius="50"  
+                                   HorizontalOptions="FillAndExpand">  
+
+                                <StackLayout Orientation="Horizontal">  
+                                    <Frame CornerRadius="50"   
+                                           HeightRequest="35"  
+                                           WidthRequest="35"   
+                                           Padding="0"   
+                                           HorizontalOptions="Start"   
+                                           Margin="7"  
+                                           BackgroundColor="#333">  
+                                        <Image Source="Password" Aspect="Fill" Margin="0"/>  
+                                    </Frame>  
+
+                                    <Entry Placeholder="Password"  
+                                           IsPassword="True"   
+                                           TextColor="#EDEDED"   
+                                           PlaceholderColor="#888"  
+                                           HorizontalOptions="FillAndExpand"  
+                                           Margin="0, 0, 15, 0"  
+                                           x:Name="txtContra"/>  
+                                </StackLayout>  
+
+                            </Frame>  
+
+                        </StackLayout>  
+
+                        <StackLayout Orientation="Horizontal">  
+
+                            <CheckBox IsChecked="false"   
+                                      Color="#26D1FF"/>  
+
+                            <Label Text="Recordar"  
+                                   TextColor="#B0B0B0"  
+                                   VerticalTextAlignment="Center"/>  
+
+                            <Label Text="¿Olvidó su password?"  
+                                   TextColor="#4BB7FF"  
+                                   HorizontalOptions="EndAndExpand"   
+                                   FontAttributes="Bold"  
+                                   VerticalTextAlignment="Center"/>  
+                        </StackLayout>  
+
+                        <Button Text="Iniciar Sesion"   
+                                BackgroundColor="#4BB7FF"  
+                                TextColor="Black"   
+                                FontAttributes="Bold"   
+                                CornerRadius="11"  
+                                FontSize="20"  
+                                Padding="0, 10"  
+                                Margin="0, 15, 0, 15"  
+                                x:Name="btnIniciarSesion"  
+                                Clicked="btnIniciarSesion_Clicked"/>  
+
+                        <StackLayout Orientation="Horizontal"  
+                                     HorizontalOptions="Center">  
+
+                            <Label Text="¿Todavia no te conectas?"  
+                                   TextColor="#B0B0B0"  
+                                   VerticalTextAlignment="Center"/>  
+                        </StackLayout>  
+
+                        <Button Text="Registrate"   
+                                BackgroundColor="#4BB7FF"  
+                                TextColor="Black"   
+                                FontAttributes="Bold"   
+                                CornerRadius="11"  
+                                FontSize="20"  
+                                Padding="0, 10"  
+                                Margin="0, 15, 0, 15"  
+                                x:Name="btnNav"  
+                                Clicked="btnNav_Clicked"/>  
+
+                        <StackLayout>  
+                            <Grid>  
+
+                                <BoxView BackgroundColor="#26D1FF"  
+                                         HeightRequest="1"   
+                                         Margin="50"   
+                                         HorizontalOptions="FillAndExpand"  
+                                         WidthRequest="130"/>  
+
+                                <Frame BackgroundColor="#1E1E1E"  
+                                       BorderColor="#26D1FF"   
+                                       WidthRequest="80"   
+                                       Padding="0"  
+                                       Margin="0"  
+                                       HeightRequest="50"   
+                                       CornerRadius="30" HasShadow="True"   
+                                       VerticalOptions="Center"  
+                                       HorizontalOptions="CenterAndExpand">  
+
+                                    <Label Text="O"   
+                                           TextColor="#EDEDED"  
+                                           FontSize="30"   
+                                           HorizontalTextAlignment="Center"   
+                                           FontAttributes="Bold"  
+                                           VerticalTextAlignment="Center"/>  
+                                </Frame>  
+                            </Grid>  
+
+                            <StackLayout Orientation="Horizontal"  
+                                         HorizontalOptions="CenterAndExpand">  
+
+                                <Frame BackgroundColor="#4BB7FF"  
+                                       WidthRequest="50"   
+                                       Padding="0"   
+                                       Margin="0"   
+                                       HeightRequest="50"   
+                                       CornerRadius="30"  
+                                       HasShadow="False">  
+                                    <Image Source="gato5" Aspect="Fill" Margin="0"/>  
+                                </Frame>  
+
+                                <Frame BackgroundColor="#4081e3"  
+                                       WidthRequest="50"   
+                                       Padding="0"   
+                                       Margin="0"   
+                                       HeightRequest="50"   
+                                       CornerRadius="30"  
+                                       HasShadow="False">  
+                                    <Image Source="gato1" Aspect="Fill" Margin="0"/>  
+                                    
+                                </Frame>  
+                                
+                            </StackLayout>  
+                            
+                        </StackLayout>  
+
+                    </StackLayout>  
+
+                </Frame>  
+
+            </StackLayout>  
+
+        </Grid>  
+
+    </StackLayout>  
+
+</ContentPage>

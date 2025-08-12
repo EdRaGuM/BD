@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BD.Vistas.V_AgregarEvidencia"
+             NavigationPage.HasNavigationBar="False">
+
+    <StackLayout Orientation="Vertical"
+                 Padding="0">
+
+        <Grid>
+
+            <StackLayout Padding="0"
+                         Margin="0">
+
+                <Frame HeightRequest="150" 
+                       HorizontalOptions="FillAndExpand"
+                       Padding="0">
+
+                    <Image Source="Banner.png"
+                           Aspect="Fill"/>
+
+                </Frame>
+
+            </StackLayout>
+
+            <!-- ScrollView agregado para permitir desplazamiento vertical -->
+            <ScrollView>
+                <StackLayout Margin="15, 110, 15, 0">
+
+                    <Frame BackgroundColor="#404040"
+                           HeightRequest="750"
+                           HasShadow="True"
+                           BorderColor="#26D1FF"
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="FillAndExpand">
+
+                        <StackLayout>
+
+                            <StackLayout HorizontalOptions="CenterAndExpand">
+
+                                <Label Text="Registro de Evidencias"
+                                       HorizontalOptions="Center"
+                                       FontSize="50"
+                                       Padding="0, 10, 0, 10"
+                                       TextColor="#26D1FF"/>
+
+                                <BoxView HeightRequest="2"
+                                         Color="#26D1FF"
+                                         HorizontalOptions="FillAndExpand"
+                                         Margin="0, 0, 0, 20"/>
+
+                            </StackLayout>
+
+                            <Frame BackgroundColor="#333"
+                                   BorderColor="#26D1FF" 
+                                   Padding="0" 
+                                   Margin="0" 
+                                   CornerRadius="50"
+                                   HorizontalOptions="FillAndExpand">
+
+                                <StackLayout Orientation="Horizontal">
+
+                                    <Frame CornerRadius="50" 
+                                           HeightRequest="35"
+                                           WidthRequest="35" 
+                                           Padding="0" 
+                                           HorizontalOptions="Start" 
+                                           Margin="7">
+
+                                        <Image Source="Usuario"/>
+
+                                    </Frame>
+
+                                    <Entry Placeholder="ID:"
+                                           x:Name="txtID"
+                                           Keyboard="Numeric"
+                                           HorizontalOptions="FillAndExpand"
+                                           FontAttributes="Bold"/>
+
+                                </StackLayout>
+
+                            </Frame>
+
+                            <Frame BackgroundColor="#333"
+                                   BorderColor="#26D1FF" 
+                                   Padding="0" 
+                                   Margin="0, 15, 0, 0" 
+                                   CornerRadius="50"
+                                   HorizontalOptions="FillAndExpand">
+
+                                <StackLayout Orientation="Horizontal">
+
+                                    <Frame CornerRadius="50" 
+                                           HeightRequest="35"
+                                           WidthRequest="35" 
+                                           Padding="0" 
+                                           HorizontalOptions="Start" 
+                                           Margin="7">
+
+                                        <Image Source="Usuario"/>
+
+                                    </Frame>
+
+                                    <Entry Placeholder="Titulo: "
+                                           x:Name="txtTitulo"
+                                           Keyboard="Text"
+                                           HorizontalOptions="FillAndExpand"
+                                           FontAttributes="Bold"/>
+
+                                </StackLayout>
+
+                            </Frame>
+
+                            <Frame BackgroundColor="#333"
+                                   BorderColor="#26D1FF" 
+                                   Padding="0" 
+                                   Margin="0, 15, 0, 0" 
+                                   CornerRadius="50"
+                                   HorizontalOptions="FillAndExpand">
+
+                                <StackLayout Orientation="Horizontal">
+
+                                    <Frame CornerRadius="50" 
+                                           HeightRequest="35"
+                                           WidthRequest="35" 
+                                           Padding="0" 
+                                           HorizontalOptions="Start" 
+                                           Margin="7">
+
+                                        <Image Source="Usuario"/>
+
+                                    </Frame>
+
+                                    <Entry Placeholder="Descripcion: "
+                                           x:Name="txtDescripcion"
+                                           Keyboard="Text"
+                                           HorizontalOptions="FillAndExpand"/>
+
+                                </StackLayout>
+
+                            </Frame>
+
+                            <Frame BackgroundColor="#333"
+                                   BorderColor="#26D1FF" 
+                                   Padding="0" 
+                                   Margin="0, 15, 0, 0" 
+                                   CornerRadius="50"
+                                   HorizontalOptions="FillAndExpand">
+
+                                <StackLayout Orientation="Horizontal">
+
+                                                    <Frame CornerRadius="50" 
+                                           HeightRequest="35"
+                                           WidthRequest="35" 
+                                           Padding="0" 
+                                           HorizontalOptions="Start" 
+                                           Margin="7">
+
+                                        <Image Source="Usuario"/>
+
+                                    </Frame>
+
+                                    <Entry Placeholder="Grupo: "
+                                           x:Name="txtGrupo"
+                                           Keyboard="Text"
+                                           HorizontalOptions="FillAndExpand"/>
+
+                                </StackLayout>
+
+                            </Frame>
+
+                            <Frame BackgroundColor="#333"
+                                   BorderColor="#26D1FF" 
+                                   Padding="0" 
+                                   Margin="0, 15, 0, 0" 
+                                   CornerRadius="50"
+                                   HorizontalOptions="FillAndExpand">
+
+                                <StackLayout Orientation="Horizontal">
+
+                                    <Frame CornerRadius="50" 
+                                           HeightRequest="35"
+                                           WidthRequest="35" 
+                                           Padding="0" 
+                                           HorizontalOptions="Start" 
+                                           Margin="7">
+
+                                        <Image Source="Usuario"/>
+
+                                    </Frame>
+
+                                    <Entry Placeholder="Materia: "
+                                           x:Name="txtMateria"
+                                           Keyboard="Text"
+                                           HorizontalOptions="FillAndExpand"/>
+
+                                </StackLayout>
+
+                            </Frame>
+
+                            <Frame BackgroundColor="#333"
+                                   BorderColor="#26D1FF" 
+                                   Padding="0" 
+                                   Margin="0, 15, 0, 0" 
+                                   CornerRadius="50"
+                                   HorizontalOptions="FillAndExpand">
+
+                                <StackLayout Orientation="Horizontal">
+
+                                    <Frame CornerRadius="50" 
+                                           HeightRequest="35"
+                                           WidthRequest="35" 
+                                           Padding="0" 
+                                           HorizontalOptions="Start" 
+                                           Margin="7">
+
+                                        <Image Source="Evidencia"/>
+
+                                    </Frame>
+
+                                    <Entry Placeholder="Evidencia: "
+                                           x:Name="txtEvidencia"/>
+
+                                </StackLayout>
+
+                            </Frame>
+
+                            <Button Text="Registrar"
+                                    x:Name="btnRegistro"
+                                    Clicked="btnRegistro_Clicked"
+                                    BackgroundColor="#26D1FF"
+                                    TextColor="Black"
+                                    FontAttributes="Bold"
+                                    FontSize="20"
+                                    Margin="40, 10"/>
+
+                            <Button Text="Actualizar"
+                                    x:Name="btnActualizar"
+                                    Clicked="btnActualizar_Clicked"
+                                    BackgroundColor="#26D1FF"
+                                    TextColor="Black"
+                                    FontAttributes="Bold"
+                                    FontSize="20"
+                                    Margin="40, 10"/>
+
+                            <Button Text="Eliminar"
+                                    x:Name="btnEliminar"
+                                    Clicked="btnEliminar_Clicked"
+                                    BackgroundColor="#26D1FF"
+                                    TextColor="Black"
+                                    FontAttributes="Bold"
+                                    FontSize="20"
+                                    Margin="40, 10"/>
+
+                        </StackLayout>
+
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+            <!-- Fin ScrollView -->
+
+        </Grid>
+
+    </StackLayout>
+
+</ContentPage>
