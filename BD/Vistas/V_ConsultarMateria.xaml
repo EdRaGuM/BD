@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BD.Vistas.V_ConsultarEvidencia"
+             x:Class="BD.Vistas.V_ConsultarMateria"
              NavigationPage.HasNavigationBar="False"
              BackgroundColor="#333">
 
@@ -16,22 +16,22 @@
                HasShadow="True"
                BorderColor="#26D1FF">
 
-            <SearchBar x:Name="txtEvidencia"
+            <SearchBar x:Name="txtMateria"
                        BackgroundColor="#1E1E1E"
                        CancelButtonColor="#26D1FF"
-                       Placeholder="Buscar Evidencias Guardadas"
+                       Placeholder="Buscar Materias Guardadas"
                        PlaceholderColor="#26D1FF"
                        TextColor="#26D1FF"
-                       TextChanged="txtEvidencia_TextChanged"
+                       TextChanged="txtMateria_TextChanged"
                        FontSize="16"
                        HeightRequest="50"
                        HorizontalOptions="FillAndExpand"/>
         </Frame>
 
         <ScrollView VerticalOptions="FillAndExpand">
-            
+
             <StackLayout Padding="10,25,10,0">
-                
+
                 <ListView x:Name="MyListView"
                           ItemsSource="{Binding Items}"
                           HasUnevenRows="True"
@@ -39,34 +39,28 @@
                           SeparatorVisibility="None"
                           ItemTapped="Handle_ItemTapped"
                           SeparatorColor="#26D1FF">
-                    
+
                     <ListView.ItemTemplate>
-                        
+
                         <DataTemplate>
-                            
+
                             <ViewCell>
-                                
+
                                 <Frame Margin="0,5"
                                        Padding="10"
                                        BackgroundColor="#262626"
                                        CornerRadius="10"
                                        HasShadow="True"
                                        BorderColor="#26D1FF">
-                                    
+
                                     <StackLayout Spacing="5">
-                                        
+
                                         <Label Text="{Binding Titulo}"
-                                               FontSize="20"
-                                               FontAttributes="Bold"
-                                               TextColor="#26D1FF"
-                                               LineBreakMode="TailTruncation" />
-                                        
-                                        <Label Text="{Binding Materia}"
                                                FontSize="16"
                                                TextColor="White"
                                                LineBreakMode="WordWrap"/>
 
-                                        <Label Text="{Binding Id_Tarea}"
+                                        <Label Text="{Binding Tipo}"
                                                FontSize="14"
                                                TextColor="White"
                                                FontAttributes="Italic"/>

@@ -11,16 +11,16 @@ using Xamarin.Forms.Xaml;
 namespace BD.Vistas
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class V_InformacionEvidencia : ContentPage
+    public partial class V_InformacionMateria : ContentPage
     {
-        public V_InformacionEvidencia(T_Tarea tarea)
+        public V_InformacionMateria(T_Materia materia)
         {
             InitializeComponent();
 
-            lblTitulo.Text = tarea.Titulo;
-            lblDescripcion.Text = tarea.Descripcion;
-            lblGrupo.Text = tarea.Grupo;
-            lblMateria.Text = tarea.Materia;
+            lblTitulo.Text = materia.Titulo;
+            lblDescripcion.Text = materia.Descripcion;
+            lblTipo.Text = materia.Tipo;
+            lblFecha.Text = materia.FechaRegistro.ToString("dd/MM/yyyy");
         }
 
         private async void Button_Clicked(object sender, EventArgs e)

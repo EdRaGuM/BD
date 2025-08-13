@@ -189,10 +189,13 @@
 
                                     </Frame>
 
-                                    <Entry Placeholder="Materia: "
-                                           x:Name="txtMateria"
-                                           Keyboard="Text"
-                                           HorizontalOptions="FillAndExpand"/>
+                                    <!-- Nuevo Picker para seleccionar la materia -->
+                                    <Picker x:Name="pickerMateria"
+                                            Title="Selecciona la materia"
+                                            HorizontalOptions="FillAndExpand"
+                                            TextColor="White"
+                                            FontAttributes="Bold"
+                                            BackgroundColor="Transparent"/>
 
                                 </StackLayout>
 
@@ -203,25 +206,7 @@
                                    Padding="0" 
                                    Margin="0, 15, 0, 0" 
                                    CornerRadius="50"
-                                   HorizontalOptions="FillAndExpand">
-
-                                <StackLayout Orientation="Horizontal">
-
-                                    <Frame CornerRadius="50" 
-                                           HeightRequest="35"
-                                           WidthRequest="35" 
-                                           Padding="0" 
-                                           HorizontalOptions="Start" 
-                                           Margin="7">
-
-                                        <Image Source="Evidencia"/>
-
-                                    </Frame>
-
-                                    <Entry Placeholder="Evidencia: "
-                                           x:Name="txtEvidencia"/>
-
-                                </StackLayout>
+                                   HorizontalOptions="FillAndExpand"> 
 
                             </Frame>
 

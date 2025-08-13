@@ -20,8 +20,7 @@ namespace BD.Vistas
 
         private void btnEvidencias_Clicked(object sender, EventArgs e)
         {
-            T_Tarea tarea = new T_Tarea();
-            Navigation.PushAsync(new V_AgregarEvidencia(tarea));
+            Navigation.PushAsync(new V_AgregarEvidencia());
         }
 
         private void btnSalir_Clicked(object sender, EventArgs e)
@@ -34,5 +33,14 @@ namespace BD.Vistas
             Navigation.PushAsync(new V_ConsultarEvidencia());
         }
 
+        private void btnMaterias_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new V_AgregarMateria());
+        }
+
+        private void btnConsultarMaterias_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new V_ConsultarMateria());
+        }
     }
 }

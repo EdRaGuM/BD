@@ -5,18 +5,19 @@ using System.Text;
 
 namespace BD.Tablas
 {
-    public class T_Tarea
+    public class T_Materia
     {
         [AutoIncrement, PrimaryKey, NotNull]
-        public int Id_Tarea { get; set; }
+        public int Id_Materia { get; set; }
 
         public string Titulo { get; set; }
 
         public string Descripcion { get; set; }
 
-        public string Grupo { get; set; }
+        public string Tipo { get; set; }
 
-        public string Materia { get; set; }
+        public DateTime FechaRegistro { get; set; }
+
 
     }
 }

@@ -12,21 +12,40 @@ using Xamarin.Forms.Xaml;
 
 namespace BD.Vistas
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class V_AgregarEvidencia : ContentPage
-	{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class V_AgregarEvidencia : ContentPage
+    {
         private readonly SQLiteAsyncConnection conn;
         private T_Tarea _Tarea;
-        string IDVal, TituloVal, DescripcionVal, GrupoVal, MateriaVal, EvidenciaVal;
+        string IDVal, TituloVal, DescripcionVal, GrupoVal;
 
-        public V_AgregarEvidencia (T_Tarea Tarea)
-		{
-			InitializeComponent ();
+        public V_AgregarEvidencia(T_Tarea Tarea)
+        {
+            InitializeComponent();
             var Ruta = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Tareas.db3");
             conn = new SQLiteAsyncConnection(Ruta);
             conn.CreateTableAsync<T_Tarea>().Wait();
             _Tarea = Tarea;
+        }
 
+        public V_AgregarEvidencia()
+        {
+            InitializeComponent();
+            var Ruta = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Tareas.db3");
+            conn = new SQLiteAsyncConnection(Ruta);
+            conn.CreateTableAsync<T_Tarea>().Wait();
+            CargarMaterias();
+        }
+
+        // Método para poblar el Picker con las materias disponibles
+        private async void CargarMaterias()
+        {
+            var materias = await conn.Table<T_Materia>().ToListAsync();
+            pickerMateria.Items.Clear();
+            foreach (var materia in materias)
+            {
+                pickerMateria.Items.Add(materia.Titulo);
+            }
         }
 
         private async void btnActualizar_Clicked(object sender, EventArgs e)
@@ -35,14 +54,15 @@ namespace BD.Vistas
 
             if (resul)
             {
+                string materiaSeleccionada = pickerMateria.SelectedItem?.ToString() ?? string.Empty;
+
                 T_Tarea t = new T_Tarea
                 {
                     Id_Tarea = Convert.ToInt16(txtID.Text),
                     Titulo = txtTitulo.Text,
                     Descripcion = txtDescripcion.Text,
                     Grupo = txtGrupo.Text,
-                    Materia = txtMateria.Text,
-                    Evidencia = txtEvidencia.Text
+                    Materia = materiaSeleccionada
                 };
 
                 await conn.UpdateAsync(t);
@@ -52,60 +72,12 @@ namespace BD.Vistas
 
         private async void btnRegistro_Clicked(object sender, EventArgs e)
         {
+            try { IDVal = txtID.Text.Trim(); } catch { IDVal = String.Empty; }
+            try { TituloVal = txtTitulo.Text.Trim(); } catch { TituloVal = String.Empty; }
+            try { DescripcionVal = txtDescripcion.Text.Trim(); } catch { DescripcionVal = String.Empty; }
+            try { GrupoVal = txtGrupo.Text.Trim(); } catch { GrupoVal = String.Empty; }
 
-            try
-            {
-                IDVal = txtID.Text.Trim();
-            }
-            catch (Exception)
-            {
-                IDVal = String.Empty;
-            }
-
-            try
-            {
-                TituloVal = txtTitulo.Text.Trim();
-            }
-            catch (Exception)
-            {
-                TituloVal = String.Empty;
-            }
-
-            try
-            {
-                DescripcionVal = txtDescripcion.Text.Trim();
-            }
-            catch (Exception)
-            {
-                DescripcionVal = String.Empty;
-            }
-
-            try
-            {
-                GrupoVal = txtGrupo.Text.Trim();
-            }
-            catch (Exception)
-            {
-                GrupoVal = String.Empty;
-            }
-
-            try
-            {
-                MateriaVal = txtMateria.Text.Trim();
-            }
-            catch (Exception)
-            {
-                MateriaVal = String.Empty;
-            }
-
-            try
-            {
-                EvidenciaVal = txtEvidencia.Text.Trim();
-            }
-            catch (Exception)
-            {
-                EvidenciaVal = String.Empty;
-            }
+            string materiaSeleccionada = pickerMateria.SelectedItem?.ToString() ?? string.Empty;
 
             if (string.IsNullOrEmpty(IDVal))
             {
@@ -135,17 +107,10 @@ namespace BD.Vistas
                 return;
             }
 
-            if (string.IsNullOrEmpty(MateriaVal))
+            if (string.IsNullOrEmpty(materiaSeleccionada))
             {
-                await DisplayAlert("Error", "La materia esta vacia. Rellenalo", "OK");
-                txtMateria.Focus();
-                return;
-            }
-
-            if (string.IsNullOrEmpty(EvidenciaVal))
-            {
-                await DisplayAlert("Error", "La evidencia esta vacia. Rellenalo", "OK");
-                txtEvidencia.Focus();
+                await DisplayAlert("Error", "La materia está vacía. Selecciona una materia", "OK");
+                pickerMateria.Focus();
                 return;
             }
 
@@ -153,18 +118,13 @@ namespace BD.Vistas
 
             if (resul)
             {
-                // Validar que no se repita el ID
-               
-
-                // Insertar si el ID es nuevo
                 T_Tarea t = new T_Tarea
                 {
                     Id_Tarea = Convert.ToInt32(txtID.Text),
                     Titulo = txtTitulo.Text,
                     Descripcion = txtDescripcion.Text,
                     Grupo = txtGrupo.Text,
-                    Materia = txtMateria.Text,
-                    Evidencia = txtEvidencia.Text
+                    Materia = materiaSeleccionada
                 };
 
                 await conn.InsertAsync(t);
@@ -173,15 +133,34 @@ namespace BD.Vistas
             }
         }
 
-
         private async void btnEliminar_Clicked(object sender, EventArgs e)
         {
-            var resul = await DisplayAlert("Alerta Importante", "¿Desearias ELIMINAR este registro", "NO", "SI");
+            try { IDVal = txtID.Text.Trim(); } catch { IDVal = String.Empty; }
+
+            if (string.IsNullOrEmpty(IDVal))
+            {
+                await DisplayAlert("Error", "El ID esta vacio. Rellenalo", "OK");
+                txtID.Focus();
+                return;
+            }
+
+            var resul = await DisplayAlert("Alerta Importante", "¿Desearias ELIMINAR este registro", "SI", "NO");
 
             if (resul)
             {
-                await conn.DeleteAsync(_Tarea);
-                await DisplayAlert("EXito", "Se elimino el registro", "OK");
+                string materiaSeleccionada = pickerMateria.SelectedItem?.ToString() ?? string.Empty;
+
+                T_Tarea t = new T_Tarea
+                {
+                    Id_Tarea = Convert.ToInt32(txtID.Text),
+                    Titulo = txtTitulo.Text,
+                    Descripcion = txtDescripcion.Text,
+                    Grupo = txtGrupo.Text,
+                    Materia = materiaSeleccionada
+                };
+
+                await conn.DeleteAsync(t);
+                await DisplayAlert("Éxito", "Se eliminó el registro", "OK");
             }
         }
     }

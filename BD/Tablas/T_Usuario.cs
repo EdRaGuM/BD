@@ -1,5 +1,4 @@
-﻿
-using System.Numerics;
+﻿using System.Numerics;
 using SQLite;
 
 namespace BD.Tablas
@@ -7,7 +6,7 @@ namespace BD.Tablas
     public class T_Usuario
     {
         [PrimaryKey, AutoIncrement, NotNull]
-        public int id_Usuario { get; set; }
+        public int Id_Usuario { get; set; }
 
         [NotNull]
         public string Nombre { get; set; }

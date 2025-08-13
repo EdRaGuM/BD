@@ -26,6 +26,17 @@ namespace BD.Vistas
 
         private async void btnRegistro_Clicked(object sender, EventArgs e)
         {
+            // Asegúrate de crear la tabla antes de cualquier consulta o inserción
+            await ConexionA.CreateTableAsync<T_Usuario>();
+
+            // Validar que solo exista un usuario
+            var usuariosExistentes = await ConexionA.Table<T_Usuario>().ToListAsync();
+            if (usuariosExistentes.Count > 0)
+            {
+                await DisplayAlert("Alerta", "Ya existe un usuario registrado. No puedes crear otro.", "OK");
+                return;
+            }
+
             Console.WriteLine("Nombre txt:" + txtNombre.Text);
             Console.WriteLine("Genero 1: " + GeneroVal);
 
@@ -153,7 +164,6 @@ namespace BD.Vistas
                 Contrasena = txtContraseña.Text,
             };
 
-            await ConexionA.CreateTableAsync<T_Usuario>();
             await ConexionA.InsertAsync(usu);
 
             await DisplayAlert("Exito", $"Has podido crear tu cuenta correctamente. Tus datos son los siguientes" +

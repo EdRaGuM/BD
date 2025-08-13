@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BD.Vistas.V_InformacionMateria"
+             BackgroundColor="#1E1E1E"
+             NavigationPage.HasNavigationBar="False">
+
+    <StackLayout Orientation="Vertical">
+
+        <Grid >
+
+            <StackLayout>
+
+                <Frame HeightRequest="150"
+                       HorizontalOptions="FillAndExpand"
+                       Padding="0">
+                    <Image Source="Banner.png"
+                           Aspect="Fill"/>
+                </Frame>
+
+            </StackLayout>
+
+            <StackLayout Margin="15, 110, 15, 0">
+
+                <Frame BackgroundColor="#404040"
+                       HeightRequest="750"
+                       HasShadow="True"
+                       BorderColor="#26D1FF"
+                       HorizontalOptions="FillAndExpand"
+                       VerticalOptions="FillAndExpand">
+
+                    <StackLayout Padding="15">
+
+                        <StackLayout HorizontalOptions="CenterAndExpand">
+
+                            <Label Text="Información de la Materia"
+                                   HorizontalOptions="Center"
+                                   FontSize="50"
+                                   Padding="0, 10, 0, 10"
+                                   TextColor="#26D1FF"/>
+
+                            <BoxView HeightRequest="2"
+                                     Color="#26D1FF"
+                                     HorizontalOptions="FillAndExpand"
+                                     Margin="0, 0, 0, 20"/>
+
+                        </StackLayout>
+
+                        <Label Text="Título:"
+               FontAttributes="Bold"
+               TextColor="#26D1FF"/>
+
+                        <Label x:Name="lblTitulo"
+               TextColor="White"/>
+
+                        <Label Text="Descripción:"
+               FontAttributes="Bold"
+               TextColor="#26D1FF"/>
+                        <Label x:Name="lblDescripcion"
+               TextColor="White"/>
+
+                        <Label Text="Tipo:"
+               FontAttributes="Bold"
+               TextColor="#26D1FF"/>
+                        <Label x:Name="lblTipo"
+               TextColor="White"/>
+
+                        <Label Text="Fecha:"
+               FontAttributes="Bold"
+               TextColor="#26D1FF"/>
+                        <Label x:Name="lblFecha"
+               TextColor="White"/>
+
+
+
+                        <Button Text="Regrsar"
+                                Clicked="Button_Clicked"/>
+
+                    </StackLayout>
+
+
+                </Frame>
+
+            </StackLayout>
+
+        </Grid>
+
+    </StackLayout>
+
+</ContentPage>

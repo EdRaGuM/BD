@@ -13,16 +13,16 @@ using Xamarin.Forms.Xaml;
 namespace BD.Vistas
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class V_ConsultarEvidencia : ContentPage
+    public partial class V_ConsultarMateria : ContentPage
     {
-        public ObservableCollection<T_Tarea> Items { get; set; }
-        string EvidenciaCon;
+        public ObservableCollection<T_Materia> Items { get; set; }
+        string MateriaCon;
 
-        public V_ConsultarEvidencia()
+        public V_ConsultarMateria()
         {
             InitializeComponent();
             BindingContext = this;
-            CargarEvidencias();
+            CargarMaterias();
         }
 
         async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
@@ -30,8 +30,8 @@ namespace BD.Vistas
             if (e.Item == null)
                 return;
 
-            var tareaSeleccionada = (T_Tarea)e.Item;
-            await Navigation.PushAsync(new V_InformacionEvidencia(tareaSeleccionada));
+            var materiaSeleccionada = (T_Materia)e.Item;
+            await Navigation.PushAsync(new V_InformacionMateria(materiaSeleccionada));
 
             //Deselect Item
             ((ListView)sender).SelectedItem = null;
@@ -43,10 +43,10 @@ namespace BD.Vistas
 
             var ruta = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Tareas.db3");
             var db = new SQLiteConnection(ruta);
-            db.CreateTable<T_Tarea>();
+            db.CreateTable<T_Materia>();
 
-            var datos = db.Table<T_Tarea>().ToList();
-            Items = new ObservableCollection<T_Tarea>(datos);
+            var datos = db.Table<T_Materia>().ToList();
+            Items = new ObservableCollection<T_Materia>(datos);
             MyListView.ItemsSource = Items;
 
             if (datos.Count == 0)
@@ -55,45 +55,45 @@ namespace BD.Vistas
                 return;
             }
 
-            Items = new ObservableCollection<T_Tarea>(datos);
+            Items = new ObservableCollection<T_Materia>(datos);
             MyListView.ItemsSource = Items;
         }
 
-        private async void CargarEvidencias()
+        private async void CargarMaterias()
         {
             var ruta = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Tareas.db3");
             var db = new SQLiteAsyncConnection(ruta);
-            var evidencias = await db.Table<T_Tarea>().ToListAsync();
-            Items = new ObservableCollection<T_Tarea>(evidencias);
+            var materias = await db.Table<T_Materia>().ToListAsync();
+            Items = new ObservableCollection<T_Materia>(materias);
             MyListView.ItemsSource = Items;
         }
 
-        private void txtEvidencia_TextChanged(object sender, TextChangedEventArgs e)
+        private void txtMateria_TextChanged(object sender, TextChangedEventArgs e)
         {
             var Ruta = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Tareas.db3");
             var db = new SQLiteConnection(Ruta);
-            db.CreateTable<T_Tarea>();
+            db.CreateTable<T_Materia>();
 
-            string texto = txtEvidencia.Text?.Trim() ?? string.Empty;
+            string texto = txtMateria.Text?.Trim() ?? string.Empty;
 
             if (string.IsNullOrEmpty(texto))
             {
-                var todas = db.Table<T_Tarea>().ToList();
-                Items = new ObservableCollection<T_Tarea>(todas);
+                var todas = db.Table<T_Materia>().ToList();
+                Items = new ObservableCollection<T_Materia>(todas);
                 MyListView.ItemsSource = Items;
                 return;
             }
 
-            IEnumerable<T_Tarea> resul = SELECT_WHERE(db, texto);
+            IEnumerable<T_Materia> resul = SELECT_WHERE(db, texto);
 
-            Items = new ObservableCollection<T_Tarea>(resul);
+            Items = new ObservableCollection<T_Materia>(resul);
             MyListView.ItemsSource = Items;
         }
 
-        public IEnumerable<T_Tarea> SELECT_WHERE(SQLiteConnection db, string EvidenciaIng)
+        public IEnumerable<T_Materia> SELECT_WHERE(SQLiteConnection db, string MateriaIng)
         {
-            string consul = "SELECT * FROM T_Tarea WHERE Titulo LIKE ?";
-            return db.Query<T_Tarea>(consul, $"%{EvidenciaIng}%");
+            string consul = "SELECT * FROM T_Materia WHERE Titulo LIKE ?";
+            return db.Query<T_Materia>(consul, $"%{MateriaIng}%");
         }
 
         private void btnMenu_Clicked(object sender, EventArgs e)

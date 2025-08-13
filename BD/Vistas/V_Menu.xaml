@@ -2,34 +2,44 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BD.Vistas.V_Menu"
-             BackgroundColor="#333"
+             BackgroundColor="#121212"
              NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Content>
-        <StackLayout Padding="20"
+        <StackLayout Padding="15"
                      VerticalOptions="CenterAndExpand"
                      Spacing="25">
 
-            <Frame CornerRadius="20"
+            <Frame BackgroundColor="#1E1E1E"
+                   HasShadow="True"
+                   CornerRadius="20"
                    Padding="25"
-                   BackgroundColor="#404040"
-                   HasShadow="True">
+                   BorderColor="#26D1FF"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="CenterAndExpand">
 
                 <StackLayout Spacing="20"
                              HorizontalOptions="Center">
 
-                    <Label Text="Menú Prinicpal"
-                           FontSize="30"
+                    <Label Text="Menú Principal"
+                           FontSize="36"
                            TextColor="#26D1FF"
                            FontAttributes="Bold"
                            HorizontalTextAlignment="Center" />
 
-                    <BoxView HeightRequest="1"
-                             Color="#26D1FF"
-                             WidthRequest="400"
-                             HorizontalOptions="Center" />
+                    <StackLayout Orientation="Horizontal"
+                                 Margin="0,10"
+                                 HorizontalOptions="FillAndExpand"
+                                 VerticalOptions="Center">
+                        
+                        <BoxView HeightRequest="1"
+                                 BackgroundColor="#333"
+                                 HorizontalOptions="FillAndExpand"
+                                 VerticalOptions="Center" />
+                        
+                    </StackLayout>
 
-                    <Button Text="Menu de Evidencias"
+                    <Button Text="Menú de Evidencias"
                             x:Name="btnEvidencias"
                             Clicked="btnEvidencias_Clicked"
                             BackgroundColor="#26D1FF"
@@ -42,6 +52,26 @@
                     <Button Text="Consultar Evidencias"
                             x:Name="btnConsultar"
                             Clicked="btnConsultar_Clicked"
+                            BackgroundColor="#1CA6D8"
+                            TextColor="White"
+                            CornerRadius="15"
+                            FontSize="20"
+                            HeightRequest="55"
+                            WidthRequest="260"/>
+
+                    <Button Text="Menú de Materias"
+                            x:Name="btnMaterias"
+                            Clicked="btnMaterias_Clicked"
+                            BackgroundColor="#26D1FF"
+                            TextColor="Black"
+                            CornerRadius="15"
+                            FontSize="20"
+                            HeightRequest="55"
+                            WidthRequest="260"/>
+
+                    <Button Text="Consultar Materias"
+                            x:Name="btnConsultarMaterias"
+                            Clicked="btnConsultarMaterias_Clicked"
                             BackgroundColor="#1CA6D8"
                             TextColor="White"
                             CornerRadius="15"
