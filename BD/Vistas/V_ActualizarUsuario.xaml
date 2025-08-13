@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BD.Vistas.V_ActualizarUsuario"
+             BackgroundColor="#121212"
+             NavigationPage.HasNavigationBar="False">
+
+    <StackLayout Padding="0">
+
+        <Grid>
+
+            <StackLayout Padding="0" Margin="0">
+                <Frame HeightRequest="170"
+                       HasShadow="False"
+                       Padding="0"
+                       CornerRadius="0"
+                       BackgroundColor="#121212"
+                       HorizontalOptions="FillAndExpand">
+                    <Image Source="Banner"
+                           Aspect="AspectFill"
+                           Margin="0"/>
+                </Frame>
+            </StackLayout>
+
+            <ScrollView>
+                <StackLayout Margin="15, 130, 15, 0">
+                    <Frame BackgroundColor="#1E1E1E"
+                           HasShadow="True"
+                           CornerRadius="20"
+                           BorderColor="#26D1FF"
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           Padding="20">
+
+                        <StackLayout>
+
+                            <Label Text="Actualizar Usuario"
+                                   HorizontalOptions="Center"
+                                   FontSize="36"
+                                   FontAttributes="Bold"
+                                   TextColor="#26D1FF"
+                                   Margin="0,0,0,20"/>
+
+                            <Frame BackgroundColor="#333"
+                                   BorderColor="#26D1FF"
+                                   CornerRadius="30"
+                                   Padding="0"
+                                   HasShadow="False"
+                                   Margin="0,0,0,15"
+                                   HeightRequest="55">
+                                <StackLayout Orientation="Horizontal" Padding="10" VerticalOptions="Center">
+                                    <Image Source="Usuario"
+                                           HeightRequest="24"
+                                           WidthRequest="24"
+                                           VerticalOptions="Center"
+                                           Margin="5,0"/>
+                                    <Entry Placeholder="Nombre"
+                                           x:Name="txtNombre"
+                                           Keyboard="Text"
+                                           FontAttributes="Bold"
+                                           FontSize="16"
+                                           TextColor="#EDEDED"
+                                           HorizontalOptions="FillAndExpand"
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <Frame BackgroundColor="#333"
+                                   BorderColor="#26D1FF"
+                                   CornerRadius="30"
+                                   Padding="0"
+                                   HasShadow="False"
+                                   Margin="0,0,0,15"
+                                   HeightRequest="55">
+                                <StackLayout Orientation="Horizontal" Padding="10" VerticalOptions="Center">
+                                    <Image Source="Apellido_P"
+                                           HeightRequest="24"
+                                           WidthRequest="24"
+                                           VerticalOptions="Center"
+                                           Margin="5,0"/>
+                                    <Entry Placeholder="Apellido Paterno"
+                                           x:Name="txtApellidoP"
+                                           Keyboard="Text"
+                                           FontAttributes="Bold"
+                                           FontSize="16"
+                                           TextColor="#EDEDED"
+                                           HorizontalOptions="FillAndExpand"
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <Frame BackgroundColor="#333"
+                                   BorderColor="#26D1FF"
+                                   CornerRadius="30"
+                                   Padding="0"
+                                   HasShadow="False"
+                                   Margin="0,0,0,15"
+                                   HeightRequest="55">
+                                <StackLayout Orientation="Horizontal" Padding="10" VerticalOptions="Center">
+                                    <Image Source="Apellido_M"
+                                           HeightRequest="24"
+                                           WidthRequest="24"
+                                           VerticalOptions="Center"
+                                           Margin="5,0"/>
+                                    <Entry Placeholder="Apellido Materno"
+                                           x:Name="txtApellidoM"
+                                           FontAttributes="Bold"
+                                           Keyboard="Text"
+                                           FontSize="16"
+                                           TextColor="#EDEDED"
+                                           HorizontalOptions="FillAndExpand"
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <Frame BackgroundColor="#333"
+                                   BorderColor="#26D1FF"
+                                   CornerRadius="30"
+                                   Padding="0"
+                                   HasShadow="False"
+                                   Margin="0,0,0,15"
+                                   HeightRequest="55">
+                                <StackLayout Orientation="Horizontal" Padding="10" VerticalOptions="Center">
+                                    <Image Source="Telefono"
+                                           HeightRequest="30"
+                                           WidthRequest="30"
+                                           Aspect="AspectFit"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center"
+                                           Margin="2,0"/>
+                                    <Entry Placeholder="Teléfono"
+                                           x:Name="txtTelefono"
+                                           Keyboard="Telephone"
+                                           FontAttributes="Bold"
+                                           FontSize="16"
+                                           TextColor="#EDEDED"
+                                           HorizontalOptions="FillAndExpand"
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <Frame BackgroundColor="#333"
+                                   BorderColor="#26D1FF"
+                                   CornerRadius="30"
+                                   Padding="0"
+                                   HasShadow="False"
+                                   Margin="0,0,0,15"
+                                   HeightRequest="55">
+                                <StackLayout Orientation="Horizontal" Padding="10" VerticalOptions="Center">
+                                    <Image Source="Correo"
+                                           HeightRequest="24"
+                                           WidthRequest="24"
+                                           VerticalOptions="Center"
+                                           Margin="5,0"/>
+                                    <Entry Placeholder="Correo"
+                                           x:Name="txtCorreo"
+                                           Keyboard="Email"
+                                           FontAttributes="Bold"
+                                           FontSize="16"
+                                           TextColor="#EDEDED"
+                                           HorizontalOptions="FillAndExpand"
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <Frame BackgroundColor="#333"
+                                   BorderColor="#26D1FF"
+                                   CornerRadius="30"
+                                   Padding="0"
+                                   HasShadow="False"
+                                   Margin="0,0,0,15"
+                                   HeightRequest="55">
+                                <StackLayout Orientation="Horizontal" Padding="10" VerticalOptions="Center">
+                                    <Image Source="Password"
+                                           HeightRequest="25"
+                                           WidthRequest="30"
+                                           Aspect="AspectFit"
+                                           VerticalOptions="Center"
+                                           Margin="5,0"/>
+                                    <Entry Placeholder="Contraseña"
+                                           x:Name="txtContraseña"
+                                           IsPassword="True"
+                                           Keyboard="Text"
+                                           FontAttributes="Bold"
+                                           FontSize="16"
+                                           TextColor="#EDEDED"
+                                           HorizontalOptions="FillAndExpand"
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <Frame BackgroundColor="#333"
+                                   CornerRadius="20"
+                                   BorderColor="#26D1FF"
+                                   Padding="20"
+                                   Margin="0, 25, 0, 20"
+                                   HasShadow="True">
+                                <StackLayout Orientation="Vertical" Spacing="15">
+                                    <Label Text="Género:"
+                                           HorizontalOptions="Center"
+                                           FontSize="Large"
+                                           TextColor="#26D1FF"
+                                           FontAttributes="Bold"/>
+                                    <StackLayout Orientation="Horizontal"
+                                                 HorizontalOptions="Center"
+                                                 Spacing="30">
+                                        <Frame BackgroundColor="#222"
+                                               BorderColor="#26D1FF"
+                                               CornerRadius="20"
+                                               Padding="5"
+                                               HeightRequest="50"
+                                               WidthRequest="160"
+                                               HasShadow="False">
+                                            <StackLayout Orientation="Horizontal"
+                                                         VerticalOptions="Center"
+                                                         Spacing="10"
+                                                         HorizontalOptions="Center">
+                                                <Image Source="Masculino"
+                                                       HeightRequest="30"
+                                                       WidthRequest="30"
+                                                       VerticalOptions="Center"/>
+                                                <RadioButton Content="Masculino"
+                                                             GroupName="rbsGenero"
+                                                             Value="Masculino"
+                                                             x:Name="Masculino"
+                                                             TextColor="White"
+                                                             BackgroundColor="Transparent"
+                                                             BorderColor="Transparent"
+                                                             FontAttributes="Bold"/>
+                                            </StackLayout>
+                                        </Frame>
+
+                                        <Frame BackgroundColor="#222"
+                                               BorderColor="#26D1FF"
+                                               CornerRadius="20"
+                                               Padding="5"
+                                               HeightRequest="50"
+                                               WidthRequest="160"
+                                               HasShadow="False">
+                                            <StackLayout Orientation="Horizontal"
+                                                         VerticalOptions="Center"
+                                                         Spacing="10"
+                                                         HorizontalOptions="Center">
+                                                <Image Source="Femenino"
+                                                       HeightRequest="30"
+                                                       WidthRequest="30"
+                                                       VerticalOptions="Center"/>
+                                                <RadioButton Content="Femenino"
+                                                             GroupName="rbsGenero"
+                                                             Value="Femenino"
+                                                             x:Name="Femenino"
+                                                             TextColor="White"
+                                                             BackgroundColor="Transparent"
+                                                             BorderColor="Transparent"
+                                                             FontAttributes="Bold"/>
+                                            </StackLayout>
+                                        </Frame>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+
+                            <Button Text="Actualizar"
+                                    x:Name="btnActualizar"
+                                    Clicked="btnActualizar_Clicked"
+                                    BackgroundColor="#26D1FF"
+                                    TextColor="Black"
+                                    FontAttributes="Bold"
+                                    FontSize="20"
+                                    Margin="40, 10"
+                                    CornerRadius="15"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </StackLayout>
+</ContentPage>
