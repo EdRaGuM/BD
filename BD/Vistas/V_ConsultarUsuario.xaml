@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BD.Vistas.V_ConsultarUsuario">
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="15">
+            <Label Text="Datos del Usuario" FontSize="Large" HorizontalOptions="Center"/>
+            <Entry x:Name="txtNombre" IsEnabled="False" Placeholder="Nombre"/>
+            <Entry x:Name="txtApellidoP" IsEnabled="False" Placeholder="Apellido Paterno"/>
+            <Entry x:Name="txtApellidoM" IsEnabled="False" Placeholder="Apellido Materno"/>
+            <Entry x:Name="txtTelefono" IsEnabled="False" Placeholder="Teléfono"/>
+            <Entry x:Name="txtCorreo" IsEnabled="False" Placeholder="Correo"/>
+            <Entry x:Name="txtGenero" IsEnabled="False" Placeholder="Género"/>
+            <Entry x:Name="txtContrasena" IsEnabled="False" Placeholder="Contraseña"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20">
+                <Button Text="Actualizar" Clicked="btnActualizar_Clicked"/>
+                <Button Text="Eliminar" Clicked="btnEliminar_Clicked" BackgroundColor="Red" TextColor="White"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
